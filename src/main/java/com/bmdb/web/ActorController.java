@@ -40,5 +40,12 @@ public class ActorController {
 	public void delete(@PathVariable int id) {
 		actorRepo.deleteById(id);
 	}
+	
+	// custom queries
+	@GetMapping("/name")
+	public Optional<Actor> get(@RequestParam String firstName, @RequestParam String lastName) {
+		return actorRepo.findByFirstNameAndLastName(firstName, lastName);
+	}
+
 
 }

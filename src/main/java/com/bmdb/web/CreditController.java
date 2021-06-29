@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.bmdb.business.Credit;
+import com.bmdb.business.Movie;
 import com.bmdb.db.CreditRepo;
+import com.bmdb.db.MovieRepo;
 
 @CrossOrigin
 @RestController
@@ -15,6 +17,8 @@ public class CreditController {
 	
 	@Autowired
 	private CreditRepo creditRepo;
+	@Autowired
+	private MovieRepo movieRepo;
 
 	@GetMapping("/")
 	public Iterable<Credit> getAll() {
@@ -40,5 +44,22 @@ public class CreditController {
 	public void delete(@PathVariable int id) {
 		creditRepo.deleteById(id);
 	}
+	
+	// custom queries
+	@GetMapping("/movie/{id}")
+	public Iterable<Credit> getAllByMovie(@PathVariable int id) {
+		//Optional<Movie> movie = movieRepo.findById(id);
+		return creditRepo.findAllByMovieId(id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
