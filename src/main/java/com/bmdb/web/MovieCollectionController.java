@@ -89,9 +89,11 @@ public class MovieCollectionController {
 		return movieCollection;
 	}
 	
-	// On MC Post, Put, Delete, get all mc's 
-	// for the user and loop through to 
-	// calculate new collectionValue total
+	/*
+	 *  On MC Post, Put, Delete, get all mc's 
+	 *  for the user and loop through to 
+	 *  calculate new collectionValue total
+	 */
 	private boolean recalculateCollectionValue(User user) {
 		boolean success = false;
 		try {
