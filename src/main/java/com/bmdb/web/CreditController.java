@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.bmdb.business.Credit;
-import com.bmdb.business.Movie;
 import com.bmdb.db.CreditRepo;
 import com.bmdb.db.MovieRepo;
 
