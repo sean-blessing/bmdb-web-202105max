@@ -28,7 +28,7 @@ public class UserController {
 	
 	// authenticate via POST
 	@PostMapping("/login")
-	public User login(@RequestBody User u) {
+	public Optional<User> login(@RequestBody User u) {
 		return userRepo.findByUsernameAndPassword(u.getUsername(), u.getPassword());
 	}
 	
